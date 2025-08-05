@@ -1,0 +1,286 @@
+.header {
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.container {
+  display: flex;
+  max-width: 1380px;
+  margin: auto;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navList {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  width: 137px;
+  display: flex;
+  height: 100%;
+  display: flex;
+  padding-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+.button {
+  border-radius: 4px;
+  padding: 15px 20px;
+  color: white;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 15px;
+  font-family: var(--font-inter), sans-serif;
+
+  line-height: 136%;
+  letter-spacing: 0%;
+  gap: 10px;
+  background: #006fff;
+}
+.button > a {
+  color: white;
+}
+.phone::after {
+  position: absolute;
+  padding: 5px;
+  top: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: var(--font-inter), sans-serif;
+
+  line-height: 157%;
+  border-radius: 5px;
+  width: fit-content;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  margin: auto;
+  color: black;
+  background: #c5deff;
+  content: "Скопировано";
+}
+.phoneAndButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.navItem {
+  position: relative;
+}
+
+.navItem::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  border-radius: 0 0 8px 8px;
+  transition: height 0.3s ease;
+  z-index: 1;
+}
+.navLink,
+.navLinkMob {
+  font-weight: 400;
+  font-family: var(--font-inter), sans-serif;
+
+  font-size: 15px;
+  line-height: 157%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.phone,
+.phoneToMob {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-family: var(--font-inter), sans-serif;
+
+  font-size: 15px;
+  line-height: 157%;
+  gap: 6px;
+  position: relative;
+
+  color: black;
+  background: none;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.navItem:hover::after {
+  height: 70%;
+}
+.cyan::after {
+  background-color: #00aeef;
+}
+.pink::after {
+  background-color: #eb008b;
+}
+.yellow::after {
+  background-color: #fff200;
+}
+.navItem.yellow:hover .navLink {
+  color: black;
+}
+
+.navLink {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+.mobile {
+  display: none;
+}
+
+.navItem:hover .navLink {
+  color: white;
+}
+.navMob,
+.navListMob {
+  width: 100%;
+}
+.navMob {
+  position: absolute;
+  top: 40px;
+}
+.navItemMob {
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+  text-align: right;
+}
+.pinkMob {
+  background: #ffdbf0;
+}
+.cyanMob {
+  background-color: white;
+}
+.yellowMob {
+  background: #fffef0;
+}
+.pinkMob > a {
+  color: #eb008b;
+}
+
+.yellowMob > a {
+  color: #6e6900;
+}
+.cyanMob > a {
+  color: #00aeef;
+}
+.navItemMob::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 100%;
+  height: 100%;
+  top: 0;
+  width: 10px;
+  border-radius: 10px 0 0 10px;
+}
+.cyanMob::after {
+  background: #00aeef;
+}
+.pinkMob::after {
+  background: #eb008b;
+}
+.yellowMob::after {
+  background: #fff200;
+}
+
+.close {
+  background: #eb008b;
+  width: 43px;
+  height: 30px;
+  transition: 0.5s;
+  transform: rotate(0deg);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5;
+  padding: 10px 15px;
+  gap: 4.74px;
+}
+.close > div {
+  width: 100%;
+  height: 1px;
+  background: white;
+  transition: 0.5s ease;
+}
+.open .line1 {
+  transform: rotate(45deg) translate(4px, 3px);
+}
+
+.open .line2 {
+  opacity: 0;
+}
+
+.open .line3 {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+  .phone {
+    display: none;
+  }
+  .container {
+    height: fit-content;
+
+    padding: 20px 0;
+  }
+  .logo {
+    width: 180px;
+  }
+  .logoip {
+    width: 100%;
+    height: auto;
+  }
+  .button {
+    padding: 13px 15px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 136%;
+    font-family: var(--font-inter), sans-serif;
+
+    letter-spacing: 0%;
+  }
+  .mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .phoneMob {
+    display: flex;
+  }
+  .menu {
+    width: 40%;
+    max-width: 250px;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}

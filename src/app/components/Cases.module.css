@@ -1,0 +1,133 @@
+.casesSection {
+  max-width: 1380px;
+  width: 90%;
+  margin: 117px auto;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.caseItem {
+  width: 100%;
+}
+.caseImageWrapper {
+  width: 100%;
+}
+.caseImage {
+  width: 100%;
+}
+
+.low {
+  position: sticky;
+  top: 3%;
+}
+
+.stageDetails {
+  width: 100%;
+  background: red;
+}
+.casesLink {
+  padding: 12px;
+  background: #006fff;
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  margin-top: 25px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  box-sizing: border-box;
+  line-height: 136%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.casesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 100%;
+}
+.caseTitle {
+  font-family: var(--font-raleway), sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 136%;
+  letter-spacing: 0%;
+}
+.caseDescription {
+  font-family: var(--font-raleway), sans-serif;
+  font-weight: 400;
+  margin-top: 10px;
+  font-style: Regular;
+  font-size: 13px;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+
+.casesHeading {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 80px;
+  line-height: 94%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.casesText {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.one {
+  font-family: var(--font-raleway), sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+.two {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 15px;
+  line-height: 136%;
+  letter-spacing: 0%;
+}
+.caseImageWrapper {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+}
+
+.caseImage {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 767px) {
+  .casesSection {
+    grid-template-columns: 1fr;
+  }
+  .casesLink {
+    grid-column: 1 / span 2;
+    width: 100%;
+    grid-row: 2;
+  }
+  .casesList {
+    grid-template-columns: 1fr;
+  }
+}

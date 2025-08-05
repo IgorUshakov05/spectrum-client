@@ -1,0 +1,148 @@
+.landingSection {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7ff;
+  width: 100%;
+  flex-direction: column;
+  margin: auto;
+  max-height: 900px;
+}
+.container {
+  width: 90%;
+  max-width: 1380px;
+  margin: auto auto 7vh auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.description {
+  width: 50%;
+}
+
+.title {
+  font-family: var(--font-involve);
+  font-weight: 800;
+  color: #0067ed;
+  font-size: 70px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  /* Обводка */
+  -webkit-text-stroke: 2px #001d6d;
+
+  /* Многослойная тень — имитирует глубину */
+  text-shadow: -1px 1px 0 #001d6d, -3px 3px 0 #001b66;
+}
+.agent {
+  color: #001a3b;
+  -webkit-text-stroke: 3px #487cff;
+  text-shadow: -1px 1px 0 #487cff, -3px 3px 0 #487cff;
+}
+.image {
+  margin-top: 22px;
+}
+.marqueeWrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+}
+
+.marquee {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeMove 20s linear infinite;
+  font-size: 40px;
+  height: 100%;
+  font-weight: 400;
+  font-family: Inter;
+  line-height: 157%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: white;
+  user-select: none;
+}
+
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.description {
+  font-family: var(--font-involve);
+  font-weight: 400;
+  font-style: Regular;
+  width: 60%;
+  line-height: 157%;
+  letter-spacing: 0%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-top: 25px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-family: var(--font-inter);
+  text-align: center;
+}
+.colorTriangle {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  max-width: 1380px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-image: url("/Images/Colors.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.ctaButton {
+  border-radius: 175px;
+  background: black;
+  color: white;
+  font-family: Raleway;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 400;
+  margin-top: 40px;
+  font-style: Regular;
+  font-size: 13px;
+  line-height: 157%;
+  padding: 14px 21px;
+  font-family: var(--font-involve);
+  letter-spacing: 0%;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-top: 25vh;
+  }
+  .title {
+    font-size: 13vw;
+  }
+  .description {
+    width: 100%;
+  }
+  .container {
+    margin: auto;
+  }
+  .image {
+    width: 90%;
+  }
+  .marqueeWrapper {
+    height: 10%;
+  }
+  .marquee {
+    font-size: 100%;
+  }
+}

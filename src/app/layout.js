@@ -1,14 +1,150 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import localFont from "next/font/local";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const inter = localFont({
+  variable: "--font-inter",
+  display: "swap",
+  src: [
+    {
+      path: "../fonts/Inter/static/Inter_18pt-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-ThinItalic.ttf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Inter/static/Inter_18pt-BlackItalic.ttf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+});
+export const raleway = localFont({
+  src: [
+    {
+      path: "../fonts/raleway/Raleway-VariableFont_wght.ttf",
+      weight: "100 900", 
+      style: "normal",
+    },
+    {
+      path: "../fonts/raleway/Raleway-Italic-VariableFont_wght.ttf",
+      weight: "100 900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-raleway", 
+  display: "swap",
+});
+export const gteesti = localFont({
+  variable: "--font-gteesti",
+  display: "swap",
+  src: [
+    {
+      path: "../fonts/GT/gteestiprodisplay_thin.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GT/gteestiprodisplay_light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GT/gteestiprodisplay_regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GT/gteestiprodisplay_medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GT/gteestiprodisplay_bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GT/gteestiprodisplay_ultrabold.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+});
+const involve = localFont({
+  src: [
+    {
+      path: "../fonts/Involve/Involve-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Involve/Involve-Oblique.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Involve/Involve-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Involve/Involve-MediumOblique.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Involve/Involve-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Involve/Involve-SemiBoldOblique.ttf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Involve/Involve-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Involve/Involve-BoldOblique.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-involve",
+  display: "swap",
 });
 
 export const metadata = {
@@ -18,8 +154,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ru">
+      <body
+        className={`${inter.variable} ${gteesti.variable} ${raleway.variable} ${involve.variable}`}
+      >
         {children}
       </body>
     </html>

@@ -1,0 +1,43 @@
+.main {
+  width: 90%;
+  margin: 120px auto;
+  max-width: 1380px;
+}
+.title,
+.title2 {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 3rem;
+  line-height: 105%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.default {
+  margin-top: 30px;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 15px;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+.title2 {
+  margin-top: 60px;
+}
+.list > li {
+  margin: 7px auto;
+  list-style-type: disc;
+  margin-left: 30px;
+}
+
+@media (max-width: 767px) {
+  .title,
+  .title2 {
+    font-size: 7vw;
+  }
+  .main {
+    margin-top: 160px;
+  }
+}

@@ -1,0 +1,80 @@
+.requestSection {
+  height: 90vh;
+  max-height: 900px;
+  width: 90%;
+  margin: 100px auto;
+  max-width: 1380px;
+  position: relative;
+  display: flex;
+  margin-bottom: 100px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 50px;
+  line-height: 50%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.heading > svg {
+  height: 90%;
+}
+.button {
+  border: 1.5px solid #006fff;
+  background: #ffffff80;
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  cursor: pointer;
+  color: #006fff;
+  padding: 0 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 120px;
+  position: absolute;
+  line-height: 100%;
+  border-radius: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/1;
+  letter-spacing: 0%;
+}
+
+.subheading {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 100%;
+}
+.subheadigText {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 3.125rem;
+  line-height: 113%;
+  width: 70%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .subheadigText {
+    width: 100%;
+  }
+  .subheadigText,
+  .heading {
+    font-size: 6vw;
+  }
+  .heading > svg {
+    height: 20%;
+  }
+}

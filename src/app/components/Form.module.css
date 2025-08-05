@@ -1,0 +1,209 @@
+.modal {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.315);
+  left: 0;
+}
+
+.form {
+  width: 90%;
+  background-color: white;
+  max-height: 90vh;
+  margin: auto;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 500px;
+}
+
+.formHeader {
+  position: relative;
+}
+
+.formTitle {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 113%;
+  letter-spacing: 0%;
+  color: #006fff;
+  text-transform: uppercase;
+}
+
+.formClose {
+  position: absolute;
+  cursor: pointer !important;
+  right: 0;
+  height: 22px;
+  aspect-ratio: 1/1;
+  top: -2px;
+}
+.formClose > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.formDescription {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 0.7rem;
+  margin-top: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.formFields {
+  margin: 20px auto 40px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.formSubmit {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  background-color: #006fff;
+  font-size: 0.8rem;
+  padding: 10px;
+  line-height: 107%;
+  letter-spacing: 0%;
+}
+.formLabel > svg {
+  height: 10px;
+}
+.formLabel {
+  font-family: var(--font-raleway);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+.files {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  width: fit-content;
+  justify-content: space-between;
+}
+.name {
+  grid-area: 1/1;
+}
+.files > li {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 0.8rem;
+  line-height: 157%;
+  letter-spacing: 0%;
+
+  border: 0.5 solid rgba(0, 0, 0, 0.445);
+  padding: 0 8px;
+}
+.tel {
+  grid-area: 1/2;
+}
+.message {
+  grid-area: 2/1 /2/3;
+}
+.file {
+  grid-area: 3/1/3/3;
+}
+.check {
+  grid-area: 4/1/4/3;
+}
+.formInput,
+.formTextarea {
+  padding: 15px;
+  border: 0.5px solid #b5b5b5;
+  outline: none;
+  position: relative;
+  width: 100%;
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  line-height: 157%;
+  letter-spacing: 0%;
+
+  resize: none;
+}
+.formInput > input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+.file > .formInput {
+  text-align: center;
+}
+.drop {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 157%;
+  opacity: 0.3;
+  line-height: 127%;
+  letter-spacing: 0%;
+  text-align: center !important;
+}
+.formCheckboxLabel,
+.formLink {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 0.8rem;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+
+.formLink {
+  color: #006fff;
+}
+
+.formCheckboxLabel {
+  margin-left: 7px;
+}
+
+@media (max-width: 500px) {
+  .form {
+    width: 100%;
+    padding: 20px;
+    max-height: 100vh;
+    top: 20%;
+  }
+  .formFields {
+    grid-template-columns: 1fr;
+  }
+  .tel {
+    grid-area: 2/1;
+  }
+  .message {
+    grid-area: 3/1;
+  }
+  .file {
+    grid-area: 4/1;
+  }
+  .check {
+    grid-area: 5/1;
+  }
+}

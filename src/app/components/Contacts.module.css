@@ -1,0 +1,239 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+  width: 90%;
+  max-width: 1380px;
+  margin: auto;
+}
+
+/* Заголовок */
+.headerBlock {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+  font-family: var(--font-gteesti), sans-serif;
+  font-weight: 400;
+  font-size: 90px;
+  margin-bottom: 40px;
+  line-height: 72%;
+  align-self: end;
+  letter-spacing: 0;
+}
+.header {
+  font-weight: 400;
+}
+
+/* Ячейки контактов */
+.contactMail {
+  grid-column: 1;
+  grid-row: 2;
+}
+.media {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #979797;
+  gap: 0px;
+
+  padding: 0 20px 20px 20px;
+}
+
+.under {
+  font-family: var(--font-gteesti), sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 50%;
+  line-height: 206%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.media > a {
+  font-family: var(--font-gteesti), sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 30px;
+  color: #979797;
+  width: 100%;
+  text-align: right;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.contactCustom1 {
+  grid-column: 2;
+  border: none;
+  grid-row: 2;
+}
+.contactCustom2 {
+  grid-column: 3;
+  grid-row: 2;
+
+  border: 1px solid transparent; /* важно: прозрачный, иначе перекроет градиент */
+
+  border-image-source: linear-gradient(
+    99.16deg,
+    #b5b9ff -1.13%,
+    #3a43eb 47.34%,
+    #b9a9ff 96.95%
+  );
+  border-image-slice: 1; /* обязательный параметр */
+}
+
+.contactTelegram {
+  grid-column: 1;
+  grid-row: 3;
+}
+.contactVK {
+  grid-column: 2;
+  grid-row: 3;
+}
+.contactPhone {
+  grid-column: 3;
+  grid-row: 3;
+}
+.media > a {
+  display: flex;
+  align-items: end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+/* Именованные классы для иконок, если нужна отдельная стилизация */
+.contactCustom1 {
+  padding: 0;
+}
+
+.happy {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 13px;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+.warning {
+  background: #efebff;
+  padding: 15px;
+}
+
+.workTitle {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  color: #006fff;
+  font-size: 23px;
+  line-height: 136%;
+  letter-spacing: 0%;
+}
+.schedule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.scheduleItem {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.scheduleDay {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 15px;
+  line-height: 157%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.scheduleTime {
+  font-family: var(--font-gteesti);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 140%;
+  leading-trim: NONE;
+  line-height: 136%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.contactCustom2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.telegramLink {
+  transition: 0.4s ease;
+  display: flex;
+  align-items:center;
+justify-content: flex-end;
+gap:5px;
+}
+.telegramLink:hover {
+  color: black;
+}
+.warn {
+  font-family: var(--font-involve);
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 13px;
+  color: #006fff;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+
+.warnText {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 13px;
+  line-height: 157%;
+  letter-spacing: 0%;
+}
+
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: start;
+  }
+  .container > * {
+    width: 100%;
+  }
+  .headerBlock {
+    margin: 0;
+  }
+  .header {
+    font-size: 12vw;
+    width: fit-content;
+  }
+  .scheduleTime {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  .contactMail,
+  .contactTelegram,
+  .contactVK,
+  .contactPhone {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px 0 10px;
+  }
+  .contactMail > img,
+  .contactTelegram > img,
+  .contactVK > img,
+  .contactPhone > img {
+    width: 100px;
+    aspect-ratio: 0.8/1;
+  }
+  .media > a {
+    font-size: 16\px;
+  }
+}
