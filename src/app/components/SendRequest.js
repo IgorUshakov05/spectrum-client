@@ -1,7 +1,71 @@
+"use client";
 import style from "@/app/components/SendRequest.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function SendRequest() {
+  const [value, setValue] = useState({
+    client_name: "",
+    phone: "",
+    message: "",
+    file: null,
+    consent: false,
+    consent2: false,
+  });
+  const [errorMessage, setError] = useState(null);
+  const handleInput = (e) => {
+    const { name, type, checked, value: inputValue, files } = e.target;
+    setValue((prev) => ({
+      ...prev,
+      [name]:
+        type === "checkbox" ? checked : type === "file" ? files[0] : inputValue,
+    }));
+  };
+
+  const isFormValid =
+    value.client_name.trim() !== "" &&
+    value.phone.trim() !== "" &&
+    value.consent &&
+    value.consent2 &&
+    value.message.length <= 1000;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    setError(null);
+    const formData = new FormData();
+    formData.append("client_name", value.client_name);
+    formData.append("phone", value.phone);
+    formData.append("message", value.message);
+    if (value.file) {
+      formData.append("file", value.file);
+    }
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/request`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      if (res.ok) {
+        setValue({
+          client_name: "",
+          phone: "",
+          message: "",
+          file: null,
+          consent: false,
+          consent2: false,
+        });
+      }
+      let data = await res.json();
+      await console.log(data);
+      setError(data.errors);
+    } catch {
+      alert("Ошибка отправки");
+    }
+  };
   return (
     <section
       className={style.sendRequest}
@@ -34,7 +98,10 @@ export default function SendRequest() {
                 id="message"
                 name="message"
                 className={style.input}
-                placeholder="Введите ваше сообщение"
+                value={value.message}
+                onChange={handleInput}
+                maxLength={1000}
+                placeholder="Сделаем пару плакатиков?)"
               />
             </div>
 
@@ -42,9 +109,16 @@ export default function SendRequest() {
               <label htmlFor="file" className={style.label}>
                 Файл
               </label>
-              <div className={style.fileUpload}>
+              <div
+                className={style.fileUpload}
+                style={{ border: value.file ? "1px solid white" : "" }}
+              >
                 <div className={style.fileInfo}>
-                  <p>Скиньте сюда файл с техническим заданием, если оно есть</p>
+                  <p>
+                    {value.file
+                      ? value.file.name
+                      : "Скиньте сюда файл с техническим заданием, если оно есть"}
+                  </p>
                   <ul className={style.fileTypes}>
                     <li>txt</li>
                     <li>docx</li>
@@ -57,9 +131,10 @@ export default function SendRequest() {
                 <input
                   type="file"
                   id="file"
+                  onChange={handleInput}
                   name="file"
                   className={style.fileInput}
-                  accept=".txt,.docx,.png,.jpeg,.jpg,.cdr,.pdf"
+                  accept=".txt,.docs,.png,.jpeg,.cdr,.pdf"
                 />
               </div>
             </div>
@@ -127,34 +202,56 @@ export default function SendRequest() {
 
             <div className={style.inputGroup}>
               <label htmlFor="name" className={style.label}>
-                Имя <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.77665 12.3704L4.83249 7.77778L0 6.14815L0.781726 3.48149L5.68528 5.40741L5.54315 0H8.45685L8.31472 5.40741L13.2183 3.48149L14 6.14815L9.16751 7.77778L12.2944 12.3704L10.0203 14L7.03553 9.18519L3.9797 14L1.77665 12.3704Z" fill="#FFF200"/>
-</svg>
-
+                Имя{" "}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.77665 12.3704L4.83249 7.77778L0 6.14815L0.781726 3.48149L5.68528 5.40741L5.54315 0H8.45685L8.31472 5.40741L13.2183 3.48149L14 6.14815L9.16751 7.77778L12.2944 12.3704L10.0203 14L7.03553 9.18519L3.9797 14L1.77665 12.3704Z"
+                    fill="#FFF200"
+                  />
+                </svg>
               </label>
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="client_name"
+                value={value.client_name.trim()}
+                onChange={handleInput}
+                name="client_name"
                 className={style.input}
-                placeholder="Ваше имя"
+                placeholder="Ярослав"
                 required
               />
             </div>
 
             <div className={style.inputGroup}>
               <label htmlFor="phone" className={style.label}>
-                Телефон <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.77665 12.3704L4.83249 7.77778L0 6.14815L0.781726 3.48149L5.68528 5.40741L5.54315 0H8.45685L8.31472 5.40741L13.2183 3.48149L14 6.14815L9.16751 7.77778L12.2944 12.3704L10.0203 14L7.03553 9.18519L3.9797 14L1.77665 12.3704Z" fill="#FFF200"/>
-</svg>
-
+                Телефон{" "}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.77665 12.3704L4.83249 7.77778L0 6.14815L0.781726 3.48149L5.68528 5.40741L5.54315 0H8.45685L8.31472 5.40741L13.2183 3.48149L14 6.14815L9.16751 7.77778L12.2944 12.3704L10.0203 14L7.03553 9.18519L3.9797 14L1.77665 12.3704Z"
+                    fill="#FFF200"
+                  />
+                </svg>
               </label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                className={style.input}
                 placeholder="+7 (___) ___-__-__"
+                value={value.phone.trim()}
+                onChange={handleInput}
+                className={style.input}
                 required
               />
             </div>
@@ -163,9 +260,11 @@ export default function SendRequest() {
               <div className={style.check}>
                 <input
                   type="checkbox"
-                  id="agree"
-                  name="agree"
+                  id="consent"
+                  name="consent"
+                  checked={value.consent}
                   className={style.checkbox}
+                  onChange={handleInput}
                   required
                 />
                 <label htmlFor="agree" className={style.checkboxLabel}>
@@ -182,8 +281,10 @@ export default function SendRequest() {
               <div className={style.check}>
                 <input
                   type="checkbox"
-                  id="privacy"
-                  name="privacy"
+                  id="consent2"
+                  name="consent2"
+                  checked={value.consent2}
+                  onChange={handleInput}
                   className={style.checkbox}
                   required
                 />
@@ -199,7 +300,12 @@ export default function SendRequest() {
                 </label>
               </div>
             </div>
-            <button type="submit" className={style.submitBtn}>
+            <button
+              type="submit"
+              className={style.submitBtn}
+              onClick={handleSubmit}
+              disabled={!isFormValid}
+            >
               Отправить
             </button>
           </fieldset>

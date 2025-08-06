@@ -1,13 +1,74 @@
+import { useState } from "react";
 import styles from "./Form.module.css";
 
 export default function Form({ close }) {
+  const [value, setValue] = useState({
+    client_name: "",
+    phone: "",
+    message: "",
+    file: null,
+    consent: false,
+  });
+  const [errorMessage, setError] = useState(null);
+  const handleInput = (e) => {
+    const { name, type, checked, value: inputValue, files } = e.target;
+    setValue((prev) => ({
+      ...prev,
+      [name]:
+        type === "checkbox" ? checked : type === "file" ? files[0] : inputValue,
+    }));
+  };
+
+  const isFormValid =
+    value.client_name.trim() !== "" &&
+    value.phone.trim() !== "" &&
+    value.consent &&
+    value.message.length <= 1000;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    setError(null);
+    const formData = new FormData();
+    formData.append("client_name", value.client_name);
+    formData.append("phone", value.phone);
+    formData.append("message", value.message);
+    if (value.file) {
+      formData.append("file", value.file);
+    }
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/request`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      if (res.ok) {
+        setValue({
+          client_name: "",
+          phone: "",
+          message: "",
+          file: null,
+          consent: false,
+        });
+        close(false);
+      }
+      let data = await res.json();
+      await console.log(data);
+      setError(data.errors);
+    } catch {
+      alert("Ошибка отправки");
+    }
+  };
+
   return (
     <div className={styles.modal} role="dialog" aria-labelledby="form-title">
       <form
-        action="/submit"
+        action={`${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/request`}
         method="POST"
         className={styles.form}
-        noValidate
         encType="multipart/form-data"
       >
         <header className={styles.formHeader}>
@@ -43,7 +104,13 @@ export default function Form({ close }) {
             ближайшее время.
           </p>
         </div>
-
+        {errorMessage && (
+          <div className={`${styles.formDescription} ${styles.error}`}>
+            {errorMessage.map((error, index) => (
+              <p key={index}>{error}</p>
+            ))}
+          </div>
+        )}
         <div className={styles.formFields}>
           <div className={`${styles.formGroup} ${styles.name}`}>
             <label htmlFor="name" className={styles.formLabel}>
@@ -63,11 +130,13 @@ export default function Form({ close }) {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              id="client_name"
+              name="client_name"
               className={styles.formInput}
-              required
               placeholder="Ярослав"
+              value={value.client_name.trim()}
+              onChange={handleInput}
+              required
             />
           </div>
 
@@ -89,12 +158,13 @@ export default function Form({ close }) {
             </label>
             <input
               type="tel"
-              name="phone"
               id="phone"
+              name="phone"
               className={styles.formInput}
-              required
               placeholder="+7 (___) ___-__-__"
-              pattern="\+?[1-9][0-9]{10,14}"
+              value={value.phone.trim()}
+              onChange={handleInput}
+              required
             />
           </div>
 
@@ -103,10 +173,13 @@ export default function Form({ close }) {
               Сообщение
             </label>
             <textarea
-              name="message"
               id="message"
+              name="message"
               className={styles.formTextarea}
               placeholder="Хочу заказать вывеску..."
+              value={value.message}
+              onChange={handleInput}
+              maxLength={1000}
             />
           </div>
 
@@ -114,9 +187,14 @@ export default function Form({ close }) {
             <label htmlFor="file" className={styles.formLabel}>
               Файл
             </label>
-            <div className={styles.formInput}>
+            <div
+              className={styles.formInput}
+              style={{ borderColor: value.file ? "green" : "" }}
+            >
               <span className={styles.drop}>
-                Скиньте сюда файл с Техническим заданием, если оно есть
+                {value.file
+                  ? value.file.name
+                  : "Скиньте сюда файл с техническим заданием, если оно есть"}
               </span>
               <ul className={styles.files}>
                 <li>txt</li>
@@ -129,9 +207,10 @@ export default function Form({ close }) {
 
               <input
                 type="file"
-                name="file"
                 id="file"
-                accept=".txt,.docs,.png,.jpeg,.cdr,.pfd"
+                name="file"
+                onChange={handleInput}
+                accept=".txt,.docs,.png,.jpeg,.cdr,.pdf"
               />
             </div>
           </div>
@@ -139,9 +218,11 @@ export default function Form({ close }) {
           <div className={`${styles.formGroup} ${styles.check}`}>
             <input
               type="checkbox"
-              name="consent"
               id="consent"
+              name="consent"
               className={styles.formCheckboxInput}
+              checked={value.consent}
+              onChange={handleInput}
               required
             />
             <label htmlFor="consent" className={styles.formCheckboxLabel}>
@@ -153,7 +234,12 @@ export default function Form({ close }) {
           </div>
         </div>
 
-        <button type="submit" className={styles.formSubmit}>
+        <button
+          type="submit"
+          className={styles.formSubmit}
+          onClick={handleSubmit}
+          disabled={!isFormValid}
+        >
           Отправить
         </button>
       </form>

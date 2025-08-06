@@ -1,6 +1,7 @@
 import style from "@/app/components/Cases.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import CasesList from "./CasesList";
 
 export default function Cases() {
   return (
@@ -40,51 +41,7 @@ export default function Cases() {
         </div>
       </div>
 
-      <ul className={style.casesList} role="list">
-        {[
-          {
-            title: "Номер дома",
-            desc: "За это время зарекомендовала себя как поставщик качественных товаров и услуг и надежный партнёр.",
-            imgSrc: "/images/cases/Number.png",
-            imgAlt: "Пример таблички с номером дома",
-          },
-          {
-            title: "Фасад кофейни COFFEE LIKE",
-            desc: "Повторная работа по другому объекту сети с расширенным оформлением.",
-            imgSrc: "/images/cases/coffe.png",
-            imgAlt: "Фасад кофейни COFFEE LIKE с логотипом",
-          },
-          {
-            title: "Номер дома",
-            desc: "Пример индивидуального подхода и работы с нестандартными материалами.",
-            imgSrc: "/images/cases/Number.png",
-            imgAlt: "Табличка с номером дома в современном стиле",
-          },
-          {
-            title: "Фасад кофейни COFFEE LIKE",
-            desc: "Повторная работа по другому объекту сети с расширенным оформлением.",
-            imgSrc: "/images/cases/coffe.png",
-            imgAlt: "Оформленный фасад кофейни COFFEE LIKE",
-          },
-        ].map(({ title, desc, imgSrc, imgAlt }, index) => (
-          <li key={index} className={style.caseItem}>
-            <article className={style.caseCard}>
-              <div className={style.caseImageWrapper}>
-                <Image
-                  src={imgSrc}
-                  alt={imgAlt}
-                  width={600}
-                  height={400}
-                  className={style.caseImage}
-                  loading="lazy"
-                />
-              </div>
-              <h3 className={style.caseTitle}>{title}</h3>
-              <p className={style.caseDescription}>{desc}</p>
-            </article>
-          </li>
-        ))}
-      </ul>
+     <CasesList />
     </section>
   );
 }

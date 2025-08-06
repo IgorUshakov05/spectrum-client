@@ -11,7 +11,6 @@ export default function Request({ topText, bottomText }) {
     document.body.style.overflowY = state ? "hidden !important" : "visible";
     setOpen(state);
   };
-
   useEffect(() => {
     const section = sectionRef.current;
     const button = buttonRef.current;
@@ -45,7 +44,7 @@ export default function Request({ topText, bottomText }) {
 
   return (
     <>
-      {isOpen && <Form close={handleClick} />}
+      {isOpen && <Form close={handleClick}  />}
 
       <article className={style.requestSection} ref={sectionRef}>
         <h2 className={style.heading} id="request-form">

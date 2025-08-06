@@ -12,6 +12,9 @@
   background-color: rgba(0, 0, 0, 0.315);
   left: 0;
 }
+.error > p {
+  color: red;
+}
 
 .form {
   width: 90%;
