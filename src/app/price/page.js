@@ -2,6 +2,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import PriceComponent from "../components/Price";
 import Request from "../components/Request";
+import metadata from "../components/Head/price";
+export { metadata };
 export default function Price() {
   return (
     <div>

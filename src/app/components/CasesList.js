@@ -2,26 +2,44 @@
 import style from "@/app/components/Cases.module.css";
 import Image from "next/image";
 import axios from "axios";
-const { useEffect, useState } = require("react");
+import { useEffect, useState } from "react";
+
 export default function CasesList() {
   const [cases, setCases] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     async function getAllCases() {
       let response = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/case?limit=6`
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/case?limit=true`
       );
       let data = response.data;
-      await console.log(data.data.map((item) => console.log(item)));
-      await setCases(data.data);
+      setCases(data.data);
     }
     getAllCases();
+
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    // Устанавливаем ширину при монтировании
+    handleResize();
+
+    // Добавляем слушатель изменения окна
+    window.addEventListener("resize", handleResize);
+
+    // Чистим слушатель при размонтировании
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Если ширина >= 767 — показываем только первые 2 кейса
+  const displayedCases =
+    windowWidth <= 767 && cases ? cases.slice(0, 2) : cases;
+
   return (
     <ul className={style.casesList} role="list">
-      {cases ? (
-        cases.map(({ id, title, description, photo }, index) => (
-          <li key={index} className={style.caseItem}>
+      {displayedCases ? (
+        displayedCases.map(({ id, title, description, photo }, index) => (
+          <li key={id} className={style.caseItem}>
             <article className={style.caseCard}>
               <div className={style.caseImageWrapper}>
                 <Image

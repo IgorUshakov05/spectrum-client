@@ -4,52 +4,60 @@ import Image from "next/image";
 export default function Price() {
   const services = [
     {
-      src: "/images/works/spectrum.svg",
+      src: "/Images/Works/spectrum.svg",
       alt: "Вывески",
       text: "Вывески",
-      price: "10 000",
+      price: "3000",
+      mc: false,
     },
     {
-      src: "/images/works/corb.svg",
+      src: "/Images/Works/corb.svg",
       alt: "Световые короба",
       text: "Световые короба",
-      price: "10 000",
+      price: "15 000",
+      mc: true,
     },
     {
-      src: "/images/works/baner1.svg",
+      src: "/Images/Works/baner1.svg",
       alt: "Баннеры",
       text: "Баннера",
-      price: "10 000",
+      price: "2500",
+      mc: true,
     },
     {
-      src: "/images/works/baner2.svg",
+      src: "/Images/Works/baner2.svg",
       alt: "Объемные буквы",
       text: "Объемные буквы",
-      price: "10 000",
+      price: "500",
+      mc: false,
     },
     {
-      src: "/images/works/auto.svg",
+      src: "/Images/Works/auto.svg",
       alt: "Брендирование авто",
       text: "Брендирование авто",
-      price: "10 000",
+      price: "5000",
+      mc: false,
     },
     {
-      src: "/images/works/table.svg",
+      src: "/Images/Works/table.svg",
       alt: "Стенды и таблички",
       text: "Стенды, таблички",
-      price: "10 000",
+      price: "500",
+      mc: false,
     },
     {
-      src: "/images/works/Tender.svg",
+      src: "/Images/Works/Tender.svg",
       alt: "Указатели и штендеры",
       text: "Указатели, штендеры",
-      price: "10 000",
+      price: "500",
+      mc: false,
     },
     {
-      src: "/images/works/application.svg",
+      src: "/Images/works/application.svg",
       alt: "Аппликация",
       text: "Аппликация",
-      price: "10 000",
+      price: "500",
+      mc: false,
     },
   ];
   return (
@@ -65,7 +73,7 @@ export default function Price() {
 
       <section className={style.body}>
         <ul className={`${style.bigContainer} ${style.priceList}`}>
-          {services.map(({ src, alt, text, price }, index) => (
+          {services.map(({ src, alt, text, price, mc }, index) => (
             <li key={index} id={index} className={style.priceItem}>
               <article className={style.priceCard}>
                 <div className={style.imageWrapper}>
@@ -82,7 +90,7 @@ export default function Price() {
                   <h3 className={style.priceTitle}>{text}</h3>
                   <p className={style.priceValue}>
                     от <span className={style.price}>{price}</span>
-                    <span className={style.priceUnit}>руб/м²</span>
+                    <span className={style.priceUnit}>руб{mc && "/м²"}</span>
                   </p>
                 </div>
               </article>

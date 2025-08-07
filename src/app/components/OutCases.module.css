@@ -31,10 +31,32 @@
   width: 100%;
   margin-top: 91px;
   display: grid;
+  transition: 0.4s ease;
   gap: 40px;
   grid-template-columns: repeat(3, 1fr);
 }
-
+.caseItem:hover > .uuid {
+  opacity: 1;
+}
+.uuid {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  z-index: 4;
+  font-family: var(--font-involve);
+  font-weight: 600;
+  background: #c5c5c545;
+  font-style: SemiBold;
+  opacity: 0;
+  font-size: 16px;
+  padding: 10px;
+  color: #ffffff4f;
+  line-height: 136%;
+  letter-spacing: 0%;
+}
+.caseItem {
+  position: relative;
+}
 .caseImageWrapper {
   width: 100%;
   aspect-ratio: 5 / 6;
@@ -113,5 +135,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 19px;
     margin-top: 50px;
+  }
+  .uuid {
+    display: none;
   }
 }

@@ -6,7 +6,7 @@
   bottom: 0;
   right: 0;
   display: flex;
-  z-index: 10000;
+  z-index: 99;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.315);
@@ -20,6 +20,7 @@
   width: 90%;
   background-color: white;
   max-height: 90vh;
+  z-index: 1001;
   margin: auto;
   border-radius: 10px;
   padding: 40px;
@@ -45,6 +46,7 @@
   position: absolute;
   cursor: pointer !important;
   right: 0;
+  background:none !important;
   height: 22px;
   aspect-ratio: 1/1;
   top: -2px;

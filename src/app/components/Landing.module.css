@@ -39,7 +39,7 @@
 }
 .agent {
   color: #001a3b;
-  -webkit-text-stroke: 3px #487cff;
+  -webkit-text-stroke: 0px #487cff;
   text-shadow: -1px 1px 0 #487cff, -3px 3px 0 #487cff;
 }
 .image {

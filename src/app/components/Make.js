@@ -79,42 +79,42 @@ export default function Make() {
         <ul className={style.serviceList} role="list">
           {[
             {
-              src: "/images/works/spectrum.svg",
+              src: "/Images/Works/spectrum.svg",
               alt: "Вывески",
               text: "Вывески",
             },
             {
-              src: "/images/works/corb.svg",
+              src: "/Images/Works/corb.svg",
               alt: "Световые короба",
               text: "Световые короба",
             },
             {
-              src: "/images/works/baner1.svg",
+              src: "/Images/Works/baner1.svg",
               alt: "Баннеры",
               text: "Баннера",
             },
             {
-              src: "/images/works/baner2.svg",
+              src: "/Images/Works/baner2.svg",
               alt: "Объемные буквы",
               text: "Объемные буквы",
             },
             {
-              src: "/images/works/auto.svg",
+              src: "/Images/Works/auto.svg",
               alt: "Брендирование авто",
               text: "Брендирование авто",
             },
             {
-              src: "/images/works/table.svg",
+              src: "/Images/Works/table.svg",
               alt: "Стенды и таблички",
               text: "Стенды, таблички",
             },
             {
-              src: "/images/works/Tender.svg",
+              src: "/Images/Works/Tender.svg",
               alt: "Указатели и штендеры",
               text: "Указатели, штендеры",
             },
             {
-              src: "/images/works/application.svg",
+              src: "/Images/Works/application.svg",
               alt: "Аппликация",
               text: "Аппликация",
             },

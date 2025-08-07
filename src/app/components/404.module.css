@@ -1,0 +1,21 @@
+.container {
+  background: #fafaff;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.headerBlock {
+  box-sizing: border-box;
+
+  text-align: center;
+}
+.header {
+  box-sizing: border-box;
+
+  font-size: 8rem;
+  color: #3a43eb;
+}

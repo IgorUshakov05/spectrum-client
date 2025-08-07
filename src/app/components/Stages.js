@@ -9,7 +9,7 @@ export default function Stages() {
     {
       number: "01",
       title: "Брифинг",
-      imgSrc: "/images/Stages/1.png",
+      imgSrc: "/Images/Stages/1.png",
       warning: true,
       imgAlt: "Иллюстрация этапа брифинга",
       description:
@@ -24,7 +24,7 @@ export default function Stages() {
     {
       number: "02",
       title: "Разработка дизайна",
-      imgSrc: "/images/Stages/2.png",
+      imgSrc: "/Images/Stages/2.png",
       imgAlt: "Иллюстрация этапа разработки дизайна",
       description:
         "На этапе разработки дизайна наш опытный дизайнер создает макет на основе технического задания, составленного во время брифинга.",
@@ -38,7 +38,7 @@ export default function Stages() {
     {
       number: "03",
       title: "Создание изделия",
-      imgSrc: "/images/Stages/3.png",
+      imgSrc: "/Images/Stages/3.png",
       imgAlt: "Процесс создания изделия",
       description:
         "Наша команда приступает к производству проекта, опираясь на макет и техническое задание.",
@@ -52,7 +52,7 @@ export default function Stages() {
     {
       number: "04",
       title: "Установка",
-      imgSrc: "/images/Stages/4.png",
+      imgSrc: "/Images/Stages/4.png",
       imgAlt: "Монтаж изделия",
       description:
         "Квалифицированные монтажники выезжают на объект для профессиональной установки проекта.",

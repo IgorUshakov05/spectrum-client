@@ -16,12 +16,10 @@ export default function CasesList() {
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/case`
       );
       let data = response.data;
-      await console.log(data.data.map((item) => console.log(item)));
-      await setCases(data.data);
+      await setCases(data.data || []);
     }
     getAllCases();
   }, []);
-  const totalPages = Math.ceil(cases.length / casesPerPage);
   const paginatedCases = cases.slice(
     page * casesPerPage,
     (page + 1) * casesPerPage
@@ -31,8 +29,14 @@ export default function CasesList() {
       {cases.length ? (
         <>
           <ul className={style.casesList} role="list">
-            {cases.map(({ id, title, description, photo }, index) => (
+            {paginatedCases.map(({ id, title, description, photo }, index) => (
               <li key={index} className={style.caseItem}>
+                <button
+                  className={style.uuid}
+                  onClick={() => navigator.clipboard.writeText(id)}
+                >
+                  {title}
+                </button>
                 <article className={style.caseCard}>
                   <div className={style.caseImageWrapper}>
                     {photo && (

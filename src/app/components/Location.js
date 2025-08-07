@@ -10,7 +10,7 @@ export default function Location() {
             src="https://yandex.ru/map-widget/v1/?um=constructor%3Acc5f1b971303d28a37b3299bc3df58e5b78bfcf9ad80f32411baec0768064997&amp;source=constructor"
             className={style.map}
             referrerPolicy="no-referrer-when-downgrade"
-            title="Карта местоположения Спектрум360"
+            title="Карта местоположения Спектрум"
             allowFullScreen
             loading="lazy"
             style={{ border: "0", height: "100%" }}

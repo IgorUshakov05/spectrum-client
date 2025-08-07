@@ -45,42 +45,23 @@
   font-weight: 400;
   font-style: Regular;
   font-size: 15px;
+  cursor: pointer;
   font-family: var(--font-inter), sans-serif;
 
   line-height: 136%;
   letter-spacing: 0%;
   gap: 10px;
+  color: white;
   background: #006fff;
 }
-.button > a {
-  color: white;
-}
-.phone::after {
-  position: absolute;
-  padding: 5px;
-  top: 100%;
-  font-weight: 400;
-  font-size: 12px;
-  font-family: var(--font-inter), sans-serif;
 
-  line-height: 157%;
-  border-radius: 5px;
-  width: fit-content;
-  right: 0;
-  left: 0;
-  opacity: 0;
-  text-align: center;
-  margin: auto;
-  color: black;
-  background: #c5deff;
-  content: "Скопировано";
-}
 .phoneAndButton {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
 }
+
 .navItem {
   position: relative;
 }
@@ -113,20 +94,45 @@
   align-items: center;
   font-weight: 400;
   font-family: var(--font-inter), sans-serif;
-
   font-size: 15px;
   line-height: 157%;
   gap: 6px;
   position: relative;
-
+  cursor: pointer;
   color: black;
   background: none;
   letter-spacing: 0%;
   text-align: center;
 }
+.phoneMob,
+.phone {
+  position: relative;
+}
+.phone:active::after,
+.phoneMob:active::after {
+  content: "Скопированно";
+  position: absolute;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  padding: 5px;
+  border-radius: 5px;
+  background: #c5deff;
+  font-size: 0.7rem;
+  line-height: 157%;
+  letter-spacing: 0%;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  top: 120%;
+  right: 0;
+  left: 0;
+}
 .navItem:hover::after {
   height: 70%;
 }
+
 .cyan::after {
   background-color: #00aeef;
 }
@@ -217,7 +223,7 @@
   transform: rotate(0deg);
   display: flex;
   flex-direction: column;
-  border-radius: 5;
+  border-radius: 5px;
   padding: 10px 15px;
   gap: 4.74px;
 }

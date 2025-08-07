@@ -17,7 +17,7 @@ export default function Footer() {
                 <Link href="/company">О компании</Link>
               </li>
               <li>
-                <Link href="/services">Услуги</Link>
+                <Link href="/price">Услуги</Link>
               </li>
             </div>
             <div className={style.footerColumn}>
@@ -25,18 +25,16 @@ export default function Footer() {
                 <Link href="/case">Портфолио</Link>
               </li>
               <li>
-                <Link href="/pricing">Цены</Link>
+                <Link href="/price">Цены</Link>
               </li>
-              <li>
-                <Link href="/contacts">Контакты</Link>
-              </li>
+              
             </div>
             <div className={style.footerColumn}>
               <li>
                 <Link href="/#request">Оставить заявку</Link>
               </li>
               <li>
-                <Link href="/privacy">
+                <Link href="/policy">
                   Политика обработки персональных данных
                 </Link>
               </li>

@@ -1,7 +1,5 @@
 "use client";
 import style from "@/app/components/OutCases.module.css";
-import Image from "next/image";
-import { useState } from "react";
 import CasesList from "./CaseLists";
 export default function OutCases() {
   return (

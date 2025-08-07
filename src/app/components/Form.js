@@ -64,10 +64,17 @@ export default function Form({ close }) {
   };
 
   return (
-    <div className={styles.modal} role="dialog" aria-labelledby="form-title">
+    <div
+      className={styles.modal}
+      role="dialog"
+      aria-labelledby="form-title"
+      onClick={() => close(false)}
+      >
       <form
         action={`${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/request`}
         method="POST"
+        onClick={(e) => e.stopPropagation()}
+
         className={styles.form}
         encType="multipart/form-data"
       >
@@ -82,14 +89,14 @@ export default function Form({ close }) {
             aria-label="Закрыть форму"
           >
             <svg
-              width="40"
-              height="41"
-              viewBox="0 0 40 41"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M1 1L20 20.5M39 40L20 20.5M20 20.5L39 1L1 40"
+                d="M2 2L12.25 12.25M22.5 22.5L12.25 12.25M12.25 12.25L22.5 2L2 22.5"
                 stroke="#B5B5B5"
                 strokeWidth="2"
               />
