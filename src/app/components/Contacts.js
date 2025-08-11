@@ -128,7 +128,7 @@ export default function Contacts() {
           className={style.iconPhone}
         />
         <a
-          href="tel:+79134458013"
+          href="tel:31-31-01"
           className={style.telegramLink}
           title="Позвонить"
         >

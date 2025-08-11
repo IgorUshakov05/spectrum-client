@@ -51,7 +51,7 @@ export default function Header() {
           <div className={style.phoneAndButton}>
             <button
               onClick={() => {
-                navigator.clipboard.writeText("+79134458013");
+                navigator.clipboard.writeText("31-31-01");
               }}
               className={style.phone}
             >
@@ -85,7 +85,7 @@ export default function Header() {
           <div className={style.phoneMob}>
             <button
               onClick={() => {
-                navigator.clipboard.writeText("+79134458013");
+                navigator.clipboard.writeText("31-31-01");
               }}
               className={style.phoneToMob}
             >

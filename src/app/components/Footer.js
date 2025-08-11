@@ -79,7 +79,7 @@ export default function Footer() {
                 г. Абакан, ул. Дружбы Народов, 63Б
               </p>
               <p className={style.text}>
-                <Link className={style.link} href="tel:+79134458013">
+                <Link className={style.link} href="tel:31-31-01">
                   <svg
                     width="18"
                     height="19"
