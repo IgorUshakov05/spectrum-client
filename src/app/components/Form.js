@@ -204,12 +204,12 @@ export default function Form({ close }) {
                   : "Скиньте сюда файл с техническим заданием, если оно есть"}
               </span>
               <ul className={styles.files}>
-                <li>txt</li>
-                <li>docs</li>
-                <li>png</li>
-                <li>jpeg</li>
-                <li>cdr</li>
-                <li>pfd</li>
+                <li className={styles.list}>txt</li>
+                <li className={styles.list}>docs</li>
+                <li className={styles.list}>png</li>
+                <li className={styles.list}>jpeg</li>
+                <li className={styles.list}>cdr</li>
+                <li className={styles.list}>pfd</li>
               </ul>
 
               <input

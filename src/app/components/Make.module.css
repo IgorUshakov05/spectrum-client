@@ -25,7 +25,7 @@
   margin-left: 33%;
 }
 .makemake {
-  justify-content: end;
+  justify-content: flex-end;
   margin-left: auto;
 }
 .start > img {
@@ -84,6 +84,7 @@
   width: 60.5%;
   font-family: var(--font-gteesti), sans-serif;
   font-weight: 400;
+  margin-top: 10px;
   color: black;
   font-style: Regular;
   font-size: 64px;
@@ -113,9 +114,6 @@
   width: 100%;
   max-width: 2000px;
   position: relative;
-
- 
-
 }
 .makeDescription {
   font-family: var(--font-gteesti), sans-serif;
@@ -141,7 +139,7 @@
 @media (max-width: 767px) {
   .serviceLink > p {
     width: 100%;
-    padding: 15px 0;
+    padding: 10px 0;
     position: relative;
     z-index: 32;
     font-size: 30px;
@@ -173,5 +171,4 @@
     margin: auto;
     z-index: 2;
   }
-
 }

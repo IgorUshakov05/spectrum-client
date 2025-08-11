@@ -22,11 +22,11 @@ export default function Contacts() {
           className={style.iconMail}
         />
         <a
-          href="mailto:info@example.com"
+          href="mailto:spectrum360@gmail.com"
           className={style.telegramLink}
           title="Написать на почту"
         >
-          spectrum360 <p className={style.under}>@mail.com</p>
+          spectrum360 <span className={style.under}>@gmail.com</span>
         </a>
       </article>
 

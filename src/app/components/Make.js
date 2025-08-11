@@ -118,14 +118,18 @@ export default function Make() {
               alt: "Аппликация",
               text: "Аппликация",
             },
-          ].map(({ href, src, alt, text }, index) => (
+          ].map(({ src, alt, text }, index) => (
             <li
               key={index + 1}
               className={style.serviceItem}
               onMouseEnter={() => setHoveredIndex(index + 1)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <Link href={`/price/#${index}`} title={text} className={style.serviceLink}>
+              <Link
+                href={`/price/#${index}`}
+                title={text}
+                className={style.serviceLink}
+              >
                 <Image
                   src={src}
                   alt={alt}

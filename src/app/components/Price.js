@@ -53,7 +53,7 @@ export default function Price() {
       mc: false,
     },
     {
-      src: "/Images/works/application.svg",
+      src: "/Images/Works/application.svg",
       alt: "Аппликация",
       text: "Аппликация",
       price: "500",

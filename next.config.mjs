@@ -10,6 +10,12 @@ const nextConfig = {
         pathname: "/api/v1/image/**",
       },
       {
+        protocol: "http",
+        hostname: "194.87.199.249",
+        port: "4000",
+        pathname: "/api/v1/image/**",
+      },
+      {
         protocol: "https",
         hostname: "api.spectrum360.ru",
         pathname: "/api/v1/image/**",
