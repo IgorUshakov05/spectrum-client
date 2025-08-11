@@ -72,6 +72,7 @@
   }
   .subheadigText,
   .heading {
+    line-height: 100%;
     font-size: 6vw;
   }
   .heading > svg {

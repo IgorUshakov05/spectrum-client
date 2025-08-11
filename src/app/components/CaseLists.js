@@ -33,7 +33,21 @@ export default function CasesList() {
               <li key={index} className={style.caseItem}>
                 <button
                   className={style.uuid}
-                  onClick={() => navigator.clipboard.writeText(id)}
+                  onClick={() => {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = id;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                      const successful = document.execCommand("copy");
+                      if (!successful) {
+                        alert("Не удалось скопировать текст");
+                      }
+                    } catch (err) {
+                      alert("Ошибка копирования");
+                    }
+                    document.body.removeChild(textArea);
+                  }}
                 >
                   {title}
                 </button>

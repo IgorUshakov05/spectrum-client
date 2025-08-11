@@ -51,12 +51,12 @@ export const inter = localFont({
 export const raleway = localFont({
   src: [
     {
-      path: "../fonts/raleway/Raleway-VariableFont_wght.ttf",
+      path: "../fonts/Raleway/Raleway-VariableFont_wght.ttf",
       weight: "100 900",
       style: "normal",
     },
     {
-      path: "../fonts/raleway/Raleway-Italic-VariableFont_wght.ttf",
+      path: "../fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf",
       weight: "100 900",
       style: "italic",
     },
