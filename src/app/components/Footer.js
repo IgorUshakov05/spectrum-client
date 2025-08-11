@@ -104,7 +104,7 @@ export default function Footer() {
                       </clipPath>
                     </defs>
                   </svg>
-                  +7 (913) 445-80-13
+                  31-31-01
                 </Link>
               </p>
             </div>
@@ -195,10 +195,10 @@ export default function Footer() {
               <img src="/Images/ma.svg" alt="Почта" />
               <Link
                 className={style.socialLink}
-                href="mailto:spectrum360@gmail.com"
+                href="mailto:spectrum119@mail.ru"
                 aria-label="Почта"
               >
-                spectrum360@gmail.com
+                spectrum119@mail.ru
               </Link>
             </li>
           </ul>

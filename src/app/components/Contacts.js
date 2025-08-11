@@ -22,7 +22,7 @@ export default function Contacts() {
           className={style.iconMail}
         />
         <a
-          href="mailto:spectrum360@gmail.com"
+          href="mailto:spectrum119@mail.ru"
           className={style.telegramLink}
           title="Написать на почту"
         >
@@ -132,7 +132,7 @@ export default function Contacts() {
           className={style.telegramLink}
           title="Позвонить"
         >
-          +7 (913) 445-80-13
+          31-31-01
         </a>
       </article>
     </section>

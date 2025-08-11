@@ -141,7 +141,7 @@ export default function SendRequest() {
             <ul className={style.contactInfo}>
               <li className={style.one}>
                 <a
-                  href="https://t.me/spectrum360"
+                  href="https://t.me/spectrum_manager01"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -155,7 +155,7 @@ export default function SendRequest() {
                 </a>
               </li>
               <li className={style.two}>
-                <a href="tel:+79999999999">
+                <a href="tel:31-31-01">
                   <Image
                     src={"/Images/vk.svg"}
                     width={18}
@@ -166,14 +166,14 @@ export default function SendRequest() {
                 </a>
               </li>
               <li className={style.three}>
-                <a href="mailto:spectrum360@gmail.com">
+                <a href="mailto:spectrum119@mail.ru">
                   <Image
                     src={"/Images/ma.svg"}
                     width={18}
                     height={100}
                     alt="Телеграм"
                   />
-                  <span>spectrum360@gmail.com</span>
+                  <span>spectrum119@mail.ru</span>
                 </a>
               </li>
             </ul>

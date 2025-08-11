@@ -74,7 +74,7 @@ export default function Header() {
                   </clipPath>
                 </defs>
               </svg>
-              +7 (913) 445-80-13
+              31-31-01
             </button>
             <button className={style.button} onClick={() => setOpen(true)}>
               Оставить заявку
@@ -108,7 +108,7 @@ export default function Header() {
                   </clipPath>
                 </defs>
               </svg>
-              +7 (913) 445-80-13
+              31-31-01
             </button>
           </div>
           <div className={style.menu}>
