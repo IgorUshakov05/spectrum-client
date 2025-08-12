@@ -38,7 +38,7 @@ export default function Make() {
     >
       <div className={style.titleAndPic}>
         <Image
-          src="/Images/hand.png"
+          src="/Images/hand.svg"
           alt="Иконка руки слева от заголовка"
           width={100}
           height={100}
@@ -60,7 +60,7 @@ export default function Make() {
           </h2>
         </div>
         <Image
-          src="/Images/iron.png"
+          src="/Images/iron.svg"
           alt="Иконка железа справа от заголовка"
           width={100}
           height={100}
