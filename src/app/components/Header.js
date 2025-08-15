@@ -31,7 +31,7 @@ export default function Header() {
           <nav className={style.nav}>
             <ul className={style.navList}>
               <li className={`${style.navItem} ${style.cyan}`}>
-                <Link href="/company" className={style.navLink}>
+                <Link href="/about" className={style.navLink}>
                   О компании
                 </Link>
               </li>
@@ -41,7 +41,7 @@ export default function Header() {
                 </a>
               </li>
               <li className={`${style.navItem} ${style.yellow}`}>
-                <Link href="/price" className={style.navLink}>
+                <Link href="/catalog" className={style.navLink}>
                   Цены
                 </Link>
               </li>
@@ -124,7 +124,7 @@ export default function Header() {
               <nav className={style.navMob}>
                 <ul className={style.navListMob}>
                   <li className={`${style.navItemMob} ${style.cyanMob}`}>
-                    <Link href="/company" className={style.navLinkMob}>
+                    <Link href="/about" className={style.navLinkMob}>
                       О компании
                     </Link>
                   </li>
@@ -134,7 +134,7 @@ export default function Header() {
                     </a>
                   </li>
                   <li className={`${style.navItemMob} ${style.yellowMob}`}>
-                    <Link href="/price" className={style.navLinkMob}>
+                    <Link href="/catalog" className={style.navLinkMob}>
                       Цены
                     </Link>
                   </li>

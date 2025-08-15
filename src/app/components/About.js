@@ -77,7 +77,7 @@ export default function About() {
           телекоммуникационная компания МТС, РусГидро, Медведь-Абакан, сеть
           магазинов «Супер спорт», СУЭК и другие.
         </p>
-        <Link className={styles.aboutLink} href="/company">
+        <Link className={styles.aboutLink} href="/about">
           О компании{" "}
           <svg
             width="12"

@@ -14,7 +14,7 @@ const metadata = {
     title: "О компании — Спектрум",
     description:
       "Мы создаем качественные рекламные решения для бизнеса и государственных организаций с 2010 года.",
-    url: "https://spectrum360.ru/company",
+    url: "https://spectrum360.ru/about",
     siteName: "Спектрум",
     images: [
       {

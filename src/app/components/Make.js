@@ -126,7 +126,7 @@ export default function Make() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <Link
-                href={`/price/#${index}`}
+                href={`/catalog/#${index}`}
                 title={text}
                 className={style.serviceLink}
               >

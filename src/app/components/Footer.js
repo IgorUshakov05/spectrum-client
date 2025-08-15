@@ -14,10 +14,10 @@ export default function Footer() {
                 <Link href="/">Главная</Link>
               </li>
               <li>
-                <Link href="/company">О компании</Link>
+                <Link href="/about">О компании</Link>
               </li>
               <li>
-                <Link href="/price">Услуги</Link>
+                <Link href="/catalog">Услуги</Link>
               </li>
             </div>
             <div className={style.footerColumn}>
@@ -25,7 +25,7 @@ export default function Footer() {
                 <Link href="/case">Портфолио</Link>
               </li>
               <li>
-                <Link href="/price">Цены</Link>
+                <Link href="/catalog">Цены</Link>
               </li>
               
             </div>

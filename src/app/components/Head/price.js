@@ -14,7 +14,7 @@ const metadata = {
     title: "Цены на рекламные услуги — Спектрум",
     description:
       "Стоимость каждого проекта зависит от сложности, материалов и требований. Мы предлагаем индивидуальные решения под любой бюджет с гарантией качества.",
-    url: "https://spectrum360.ru/price",
+    url: "https://spectrum360.ru/catalog",
     siteName: "Спектрум",
     locale: "ru_RU",
     type: "website",

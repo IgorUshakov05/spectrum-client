@@ -5,7 +5,7 @@ import Partners from "../components/Partners";
 import Location from "../components/Location";
 import Contacts from "../components/Contacts";
 import Request from "../components/Request";
-import metadata from "../components/Head/company";
+import metadata from "../components/Head/about";
 export { metadata };
 export default function Company() {
   return (
