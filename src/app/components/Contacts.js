@@ -5,9 +5,9 @@ export default function Contacts() {
   return (
     <section className={style.container} aria-labelledby="contactsTitle">
       <header className={style.headerBlock}>
-        <h1 id="contactsTitle" className={style.header}>
+        <h2 id="contactsTitle" className={style.header}>
           Контакты
-        </h1>
+        </h2>
       </header>
 
       <article
