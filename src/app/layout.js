@@ -191,6 +191,113 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Рекламное агентство Спектрум",
+            alternateName: "Spectrum360",
+            url: "https://spectrum360.ru",
+            logo: "https://spectrum360.ru/favicon.ico",
+            image: "https://spectrum360.ru/preview.jpg",
+            description:
+              "Рекламное агентство из Абакана с более чем 15-летним опытом. Производим вывески, фасады, рекламные конструкции, брендируем авто и разрабатываем рекламные кампании для бизнеса и государственных организаций.",
+            slogan: "Реклама, которая работает",
+            foundingDate: "2009",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "ул. Дружбы Народов, 63Б",
+              addressLocality: "Абакан",
+              addressRegion: "Республика Хакасия",
+              postalCode: "655017",
+              addressCountry: "RU",
+            },
+            telephone: "31-31-01",
+            email: "spectrum119@mail.ru",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "31-31-01",
+              contactType: "customer service",
+              availableLanguage: ["Russian"],
+              hoursAvailable: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "09:00",
+                closes: "18:00",
+              },
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "53.7176",
+              longitude: "91.4292",
+            },
+            sameAs: [
+              "https://vk.com/spectrum360",
+              "https://t.me/spectrum360",
+              "https://t.me/spectrum_manager01",
+            ],
+            knowsAbout: [
+              "наружная реклама",
+              "изготовление вывесок",
+              "световые короба",
+              "баннеры",
+              "брендирование авто",
+              "рекламные конструкции",
+            ],
+            memberOf: [
+              { "@type": "Organization", name: "МТС" },
+              {
+                "@type": "Organization",
+                name: "АТБ — Азиатско-Тихоокеанский банк",
+              },
+              { "@type": "Organization", name: "Хакасский муниципальный банк" },
+              { "@type": "Organization", name: "УФНС по Республике Хакасия" },
+              { "@type": "Organization", name: "СУЭК" },
+              { "@type": "Organization", name: "РусГидро" },
+            ],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              reviewCount: "120",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Наши направления",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Изготовление вывесок",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Рекламные конструкции и фасады",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Брендирование автомобилей",
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
       <Script id="yandex-metrika" strategy="afterInteractive">
         {`
             (function(m,e,t,r,i,k,a){
